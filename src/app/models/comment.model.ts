@@ -1,6 +1,6 @@
-export interface IUser {
+export interface CommentModel {
   id: number;
   name: string;
-  username: string;
   email: string;
+  body: string;
 }
