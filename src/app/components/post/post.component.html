@@ -1,3 +1,4 @@
-<div>
-  {{post.id}} -- {{post.title}} -- {{post.body}}
-</div>
+<span>
+
+  <a [routerLink]="['post.details.page', post.id]" [state]="{data:post}"> Пост № {{post.id}}</a>   ---
+</span>

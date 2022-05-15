@@ -1,0 +1,11 @@
+<div>
+  ID: {{postDetails.id}}
+  <br/>
+  TITLE: {{postDetails.title}}
+  <br/>
+  BODY: {{postDetails.body}}
+  <br/>
+  <a [routerLink]="['comments.page', postDetails.id]">Коментарії</a>
+</div>
+<hr/>
+<router-outlet></router-outlet>
