@@ -31,6 +31,7 @@ import {PostDetailsComponent} from './components/post-details/post-details.compo
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
+      {path:'', redirectTo:'home.page', pathMatch:'full'},
       {path: 'home.page', component: HomeComponent},
       {
         path: 'users.page', component: UsersComponent,
