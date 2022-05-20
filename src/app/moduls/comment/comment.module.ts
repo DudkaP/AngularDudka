@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { CommentRoutingModule } from './comment-routing.module';
+import {CommentRoutingModule} from './comment-routing.module';
 import {CommentService} from "./services";
 import {HttpClientModule} from "@angular/common/http";
 import {CommentsComponent} from "./components/comments/comments.component";
 import {CommentComponent} from "./components/comment/comment.component";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -16,10 +17,12 @@ import {CommentComponent} from "./components/comment/comment.component";
   imports: [
     CommonModule,
     HttpClientModule,
-    CommentRoutingModule
+    CommentRoutingModule,
+    RouterModule
   ],
-  providers:[
+  providers: [
     CommentService
   ]
 })
-export class CommentModule { }
+export class CommentModule {
+}
