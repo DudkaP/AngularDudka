@@ -7,7 +7,8 @@ const routes:Routes = [
   {
     path: '', component: HomeComponent, children:[
       {path:'users.page', loadChildren:()=>import('./moduls').then(value => value.UserModule)},
-      {path:'posts.page', loadChildren:()=>import('./moduls').then(value => value.PostModule)}
+      {path:'posts.page', loadChildren:()=>import('./moduls').then(value => value.PostModule)},
+      {path:'comments.page', loadChildren:()=>import('./moduls').then(value => value.CommentModule)}
     ]
   }
   ]

@@ -18,8 +18,7 @@ export class PostCommentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(({id}) => {
-      this.commentService.getComments(id).subscribe(value => this.comments = value);
-      console.log(this.comments);
+      this.commentService.getCommentsById(id).subscribe(value => this.comments = value);
     })
 
   }

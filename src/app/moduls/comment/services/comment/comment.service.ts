@@ -13,8 +13,8 @@ export class CommentService {
   constructor(private http: HttpClient) {
   }
 
-  getComments(id: string): Observable<CommentModel[]> {
-    return this.http.get<CommentModel[]>(urls.comments + '/' + id + '/comments');
+  getComments(): Observable<CommentModel[]> {
+    return this.http.get<CommentModel[]>(urls.comments);
   }
 
 }
