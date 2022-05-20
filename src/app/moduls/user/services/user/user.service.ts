@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 
 import {UserModels} from "../../models";
 import {UserDetailsModel} from "../../models";
-import {urls} from "../../constants";
+import {urls} from "../../../../constants";
 
 @Injectable({
   providedIn: 'root'
