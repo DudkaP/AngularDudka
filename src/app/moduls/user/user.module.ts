@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { UserRoutingModule } from './user-routing.module';
-import {UserService} from "./services";
+import {UserRoutingModule} from './user-routing.module';
+import {UserResolver, UserService} from "./services";
 import {HttpClientModule} from "@angular/common/http";
 import {UsersComponent} from "./components/users/users.component";
 import {UserComponent} from "./components/user/user.component";
@@ -23,7 +23,8 @@ import {RouterModule} from "@angular/router";
     RouterModule
   ],
   providers:[
-    UserService
+    UserService,
+    UserResolver
   ]
 })
 export class UserModule { }

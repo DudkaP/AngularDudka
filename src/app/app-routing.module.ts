@@ -3,15 +3,15 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 
-const routes:Routes = [
+const routes: Routes = [
   {
-    path: '', component: HomeComponent, children:[
-      {path:'users.page', loadChildren:()=>import('./moduls').then(value => value.UserModule)},
-      {path:'posts.page', loadChildren:()=>import('./moduls').then(value => value.PostModule)},
-      {path:'comments.page', loadChildren:()=>import('./moduls').then(value => value.CommentModule)}
+    path: '', component: HomeComponent, children: [
+      {path: 'users.page', loadChildren: () => import('./moduls').then(value => value.UserModule)},
+      {path: 'posts.page', loadChildren: () => import('./moduls').then(value => value.PostModule)},
+      {path: 'comments.page', loadChildren: () => import('./moduls').then(value => value.CommentModule)}
     ]
   }
-  ]
+]
 
 @NgModule({
   declarations: [],
@@ -20,4 +20,5 @@ const routes:Routes = [
     RouterModule.forRoot(routes)
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
