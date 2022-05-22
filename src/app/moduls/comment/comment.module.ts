@@ -1,12 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
 
 import {CommentRoutingModule} from './comment-routing.module';
 import {CommentService} from "./services";
-import {HttpClientModule} from "@angular/common/http";
 import {CommentsComponent} from "./components/comments/comments.component";
 import {CommentComponent} from "./components/comment/comment.component";
-import {RouterModule} from "@angular/router";
+import {BackGuard} from "../../guards";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {RouterModule} from "@angular/router";
     RouterModule
   ],
   providers: [
-    CommentService
+    CommentService,
+    BackGuard
   ]
 })
 export class CommentModule {

@@ -9,9 +9,10 @@ import {CommentModel} from "../../models";
 })
 export class CommentComponent implements OnInit {
   @Input()
-  comment:CommentModel;
+  comment: CommentModel;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

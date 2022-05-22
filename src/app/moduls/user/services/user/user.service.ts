@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
-import {UserModels} from "../../models";
-import {UserDetailsModel} from "../../models";
+import {UserDetailsModel, UserModels} from "../../models";
 import {urls} from "../../../../constants";
 
 @Injectable({
