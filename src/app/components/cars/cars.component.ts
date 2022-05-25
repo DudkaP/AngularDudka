@@ -11,10 +11,12 @@ export class CarsComponent implements OnInit {
 
   cars: ICar[];
 
-  constructor(private carService:CarService) { }
+  constructor(private carService:CarService) {
+
+  }
 
   ngOnInit(): void {
-    this.carService.getAll().subscribe(value => console.log(value))
+    this.carService.getAll().subscribe(value => this.cars = value)
   }
 
 }

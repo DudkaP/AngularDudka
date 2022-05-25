@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {CarService} from "../../services";
-import {ICar} from "../../interfaces";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-car-form',
@@ -11,7 +11,8 @@ import {ICar} from "../../interfaces";
 export class CarFormComponent implements OnInit {
   carForm: FormGroup;
 
-  constructor(private carService: CarService) {
+
+  constructor(private carService: CarService, private router: Router) {
     this._createCarForm()
   }
 
@@ -27,7 +28,8 @@ export class CarFormComponent implements OnInit {
   }
 
   Save(): void {
-    this.carService.create(this.carForm.getRawValue());
-    this.carService.getAll().subscribe(value => console.log(value))
+    this.carService.create(this.carForm.getRawValue()).subscribe();
+    this.router.navigate(['carForm'])
+
   }
 }
