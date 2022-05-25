@@ -5,13 +5,18 @@ import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
 import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {CarsComponent} from "./components/cars/cars.component";
+import {CarFormComponent} from "./components/car-form/car-form.component";
+import {LogoutComponent} from "./components/logout/logout.component";
 
 const routes:Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
-      {path: 'cars', component: CarsComponent}
+      {path: 'cars', component: CarsComponent, children:[
+          {path:'carForm', component:CarFormComponent}
+        ]},
+      {path: 'logout', component: LogoutComponent}
     ]
   }
 

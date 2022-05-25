@@ -12,6 +12,8 @@ import {HeaderComponent} from './components/header/header.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MainInterceptor} from "./main.interceptor";
+import { CarFormComponent } from './components/car-form/car-form.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {MainInterceptor} from "./main.interceptor";
     CarComponent,
     LoginComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CarFormComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
