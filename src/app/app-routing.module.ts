@@ -13,8 +13,8 @@ const routes:Routes = [
     path: '', component: MainLayoutComponent, children: [
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
-      {path: 'cars', component: CarsComponent, children:[
-          {path:'carForm', component:CarFormComponent}
+      {path: 'carForm', component: CarFormComponent, children:[
+          {path:'cars', component:CarsComponent}
         ]},
       {path: 'logout', component: LogoutComponent}
     ]
