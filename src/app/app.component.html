@@ -1,2 +1,2 @@
-<h1>{{user?.name}}</h1>
-<app-users (userEmitt)="catch($event)"></app-users>
+<h1 *ngIf="user">{{user?.name}}</h1>
+<app-users></app-users>

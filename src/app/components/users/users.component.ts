@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit {
   @Output()
   userEmitt = new EventEmitter<IUser>();
 
-  constructor(private userService:UserService) {
+  constructor(private userService: UserService) {
 
   }
 
@@ -22,7 +22,4 @@ export class UsersComponent implements OnInit {
     this.userService.getAllUsers().subscribe(value => this.users = value);
   }
 
-  catchUserEmitter(event:IUser):void {
-    this.userEmitt.emit(event);
-  }
 }
