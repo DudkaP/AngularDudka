@@ -14,6 +14,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MainInterceptor} from "./main.interceptor";
 import { CarFormComponent } from './components/car-form/car-form.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     RegisterComponent,
     HeaderComponent,
     CarFormComponent,
-    LogoutComponent
+    LogoutComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
@@ -34,11 +36,11 @@ import { LogoutComponent } from './components/logout/logout.component';
     ReactiveFormsModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      multi: true,
-      useClass: MainInterceptor
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   multi: true,
+    //   useClass: MainInterceptor
+    // }
   ],
   bootstrap: [AppComponent]
 })

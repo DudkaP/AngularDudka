@@ -6,5 +6,6 @@ const {API} = environment;
 export const urls = {
   auth: `${API}/auth`,
   users: `${API}/users`,
-  cars: `${API}/cars`
+  cars: `${API}/cars`,
+  movie: `${API}`
 }

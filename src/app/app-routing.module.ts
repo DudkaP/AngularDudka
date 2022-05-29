@@ -7,10 +7,12 @@ import {RegisterComponent} from "./components/register/register.component";
 import {CarsComponent} from "./components/cars/cars.component";
 import {CarFormComponent} from "./components/car-form/car-form.component";
 import {LogoutComponent} from "./components/logout/logout.component";
+import {MovieComponent} from "./components/movie/movie.component";
 
 const routes:Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
+      {path: 'movie', component: MovieComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'carForm', component: CarFormComponent, children:[

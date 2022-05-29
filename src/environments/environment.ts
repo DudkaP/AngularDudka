@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API: 'http://owu.linkpc.net/api/v3'
+  // API: 'http://owu.linkpc.net/api/v3'
+  API: 'https://api.themoviedb.org/3/discover/'
 };
 
 /*
