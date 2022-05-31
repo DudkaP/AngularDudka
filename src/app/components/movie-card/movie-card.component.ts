@@ -14,7 +14,11 @@ export class MovieCardComponent implements OnInit {
   constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.activatedRoute);
+    this.activatedRoute.params.subscribe(value => {
+      let {state:{data}} = history;
+      console.log(data);
+
+    })
   }
 
 }
