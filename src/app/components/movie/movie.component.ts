@@ -13,7 +13,7 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.movieService.getMovie().subscribe(value => this.movie = value)
+    this.movieService.getMovie().subscribe(value => console.log(value))
   }
 
 }

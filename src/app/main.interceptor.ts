@@ -1,39 +1,22 @@
 import {Injectable} from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor, HttpErrorResponse
-} from '@angular/common/http';
-import {catchError, Observable} from 'rxjs';
-import {AuthService} from "./services";
-import {Router} from "@angular/router";
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class MainInterceptor implements HttpInterceptor {
+  private _token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YWE4NTdjZDg3ZjE5YjcyNGFlNmI2YzNiZGQ3NDlkNyIsInN1YiI6IjYyOTM0M2QzM2ZmMmRmMThjOThhM2NjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ImdWysM3SSs15OvQ_jhrEVEiqIUANjUDsnQMmWRL7PQ'
 
-  constructor(private authService: AuthService, private router:Router) {
+  constructor() {
   }
+
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const isAuthenticated = this.authService.isAuthorization();
-
-    if (isAuthenticated) {
-      request = this.addToken(request, this.authService.getToken())
-    }
-
-    return next.handle(request).pipe(
-      //@ts-ignore
-      catchError((res: HttpErrorResponse) => {
-        if (res && res.error && res.status === 401){
-          this.authService.deleteToken();
-          this.router.navigate(['login'])
-        }
-          })
-    );
+    request = request.clone({
+      setHeaders: {
+        Authorization: `Bearer ${this._token}`
+      }
+    })
+    return next.handle(request)
   }
 
-  addToken(request: HttpRequest<any>, token: string): HttpRequest<any> {
-    return request.clone({setHeaders: {Authorization: `Bearer ${token}`}})
-  }
 }

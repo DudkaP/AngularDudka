@@ -36,11 +36,11 @@ import { MovieComponent } from './components/movie/movie.component';
     ReactiveFormsModule
   ],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   multi: true,
-    //   useClass: MainInterceptor
-    // }
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: MainInterceptor
+    }
   ],
   bootstrap: [AppComponent]
 })
