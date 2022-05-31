@@ -9,8 +9,10 @@ import {AppRoutingModule} from "./app-routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MainInterceptor} from "./main.interceptor";
 import {MovieComponent} from './components/movie/movie.component';
-import { IndexComponent } from './components/index/index.component';
-import { MoviesComponent } from './components/movies/movies.component';
+import {IndexComponent} from './components/index/index.component';
+import {MoviesComponent} from './components/movies/movies.component';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { MoviesComponent } from './components/movies/movies.component';
     HeaderComponent,
     MovieComponent,
     IndexComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [
     {
