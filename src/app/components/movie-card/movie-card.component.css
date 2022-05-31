@@ -1,0 +1,11 @@
+.movieCardPoster {
+  display: flex;
+}
+
+.poster500 {
+  margin: 30px;
+}
+
+.poster500Txt {
+  margin: 30px;
+}
