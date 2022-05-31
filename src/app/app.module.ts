@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MainInterceptor} from "./main.interceptor";
 import {MovieComponent} from './components/movie/movie.component';
 import { IndexComponent } from './components/index/index.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IndexComponent } from './components/index/index.component';
     MainLayoutComponent,
     HeaderComponent,
     MovieComponent,
-    IndexComponent
+    IndexComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,

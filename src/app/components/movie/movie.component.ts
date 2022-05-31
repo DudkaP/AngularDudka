@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {MovieService} from "../../services";
+import {Component, Input, OnInit} from '@angular/core';
+import {IMovie} from "../../interfaces";
 
 @Component({
   selector: 'app-movie',
@@ -7,13 +7,14 @@ import {MovieService} from "../../services";
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
-  movie: any[];
+  @Input()
+  movieDetails:IMovie;
 
-  constructor(private movieService:MovieService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.movieService.getMovie().subscribe(value => console.log(value))
+    // console.log(this.movieDetails);
   }
 
 }
