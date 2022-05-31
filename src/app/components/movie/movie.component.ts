@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IMovie} from "../../interfaces";
+import {IMovieResults} from "../../interfaces";
 
 @Component({
   selector: 'app-movie',
@@ -8,13 +8,12 @@ import {IMovie} from "../../interfaces";
 })
 export class MovieComponent implements OnInit {
   @Input()
-  movieDetails:IMovie;
+  movie:IMovieResults;
 
   constructor() {
   }
 
   ngOnInit(): void {
-    // console.log(this.movieDetails);
   }
 
 }

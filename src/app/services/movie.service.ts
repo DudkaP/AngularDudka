@@ -13,8 +13,8 @@ export class MovieService {
 
   }
 
-  getMovie(): Observable<IMovie[]> {
-    return this.httpClient.get<IMovie[]>(urls.movie)
+  getMovie(): Observable<IMovie> {
+    return this.httpClient.get<IMovie>(urls.movie)
   }
 
 }
