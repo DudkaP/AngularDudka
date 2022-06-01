@@ -13,6 +13,7 @@ export class MovieCardComponent implements OnInit {
   movieCard:IMovieResults;
   poster500:string = urls.getPoster500;
 
+
   constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {

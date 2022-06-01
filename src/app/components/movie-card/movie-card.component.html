@@ -3,6 +3,10 @@
     <img src="{{poster500}}{{movieCard.poster_path}}">
   </div>
   <div class="poster500Txt">
+    <h2>{{movieCard.title}}</h2>
     {{movieCard.overview}}
+    <br/>
+    <a [routerLink]="['description', movieCard.id]" [state]="{data: movieCard}">Descriptions...</a>
+    <router-outlet></router-outlet>
   </div>
 </div>

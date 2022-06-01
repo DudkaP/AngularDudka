@@ -1,12 +1,22 @@
-.container{
+.headerContainer {
+  height: 70px;
+  background-color: #0e1161;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.headerNavigate {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  background-color: #0e1161;
-  border-radius: 10px;
 }
-a{
+.headerGenres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkorange;
+}
+a {
   text-decoration: none;
   padding: 0 25px;
   color: snow;
