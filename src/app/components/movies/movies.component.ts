@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MovieService} from "../../services";
 import {IMovieResults} from "../../interfaces";
+import {IGenre} from "../../interfaces/genre";
 
 @Component({
   selector: 'app-movies',
@@ -16,6 +17,7 @@ export class MoviesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.movieService.getMovie().subscribe(value => {
         this.movies = value.results
         console.log(this.movies);
@@ -23,5 +25,6 @@ export class MoviesComponent implements OnInit {
     )
 
   }
+
 
 }

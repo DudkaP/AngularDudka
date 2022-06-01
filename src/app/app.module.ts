@@ -15,6 +15,8 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import {RouterModule} from "@angular/router";
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import { GenresComponent } from './components/genres/genres.component';
+import { GenreComponent } from './components/genre/genre.component';
+import { GenreMoviesComponent } from './components/genre-movies/genre-movies.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { GenresComponent } from './components/genres/genres.component';
     MoviesComponent,
     MovieCardComponent,
     MovieInfoComponent,
-    GenresComponent
+    GenresComponent,
+    GenreComponent,
+    GenreMoviesComponent
   ],
   imports: [
     BrowserModule,
