@@ -1,0 +1,6 @@
+.genreMoviesBlocksFlex {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100%;
+}

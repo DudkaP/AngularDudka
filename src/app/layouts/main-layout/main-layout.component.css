@@ -3,6 +3,7 @@
 
 }
 .mainGenres {
+  height: 100%;
   width: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -15,4 +16,7 @@
   background-color: #0e1161;
   border-radius: 10px;
   color: antiquewhite;
+}
+.mainRouter {
+  width: 100%;
 }

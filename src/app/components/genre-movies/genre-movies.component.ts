@@ -23,8 +23,10 @@ export class GenreMoviesComponent implements OnInit {
     this.activatedRoute.params.subscribe(value => {
       let {state: {data}} = history;
       this.genre = data;
+
       this.movieService.getMovie().subscribe(value => {
         this.allMovies = value.results;
+
         this.genreMovies = this.allMovies.filter(g => {
           return g.genre_ids.includes(this.genre.id);
         })

@@ -1,1 +1,4 @@
-<p>genre-movies works!</p>
+<h1 class="genreMoviesBlocksFlex">{{genre.name}}</h1>
+<div class="genreMoviesBlocksFlex">
+  <app-movie *ngFor="let gMovie of genreMovies" [movie]="gMovie"></app-movie>
+</div>

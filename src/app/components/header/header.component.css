@@ -19,3 +19,6 @@ a {
   padding: 0 25px;
   color: snow;
 }
+.active {
+  color: red;
+}

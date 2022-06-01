@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services";
 import {IMovieResults} from "../../interfaces";
-import {IGenre} from "../../interfaces/genre";
 
 @Component({
   selector: 'app-movies',
@@ -11,7 +10,7 @@ import {IGenre} from "../../interfaces/genre";
 export class MoviesComponent implements OnInit {
 
   movies: IMovieResults[];
-
+  page: number;
 
   constructor(private movieService: MovieService) {
   }
@@ -19,8 +18,9 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
 
     this.movieService.getMovie().subscribe(value => {
-        this.movies = value.results
-        console.log(this.movies);
+        this.movies = value.results;
+        this.page = value.page;
+        console.log(value);
       }
     )
 
