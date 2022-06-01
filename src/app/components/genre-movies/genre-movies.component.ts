@@ -23,18 +23,15 @@ export class GenreMoviesComponent implements OnInit {
     this.activatedRoute.params.subscribe(value => {
       let {state: {data}} = history;
       this.genre = data;
-      console.log(this.genre);
-      console.log(this.genreMovies);
-    })
-
-    this.movieService.getMovie().subscribe(value => {
-      this.allMovies = value.results;
-
-      this.genreMovies = this.allMovies.filter(g => {
-        g.genre_ids.map(m => m === this.genre.id);
+      this.movieService.getMovie().subscribe(value => {
+        this.allMovies = value.results;
+        this.genreMovies = this.allMovies.filter(g => {
+          return g.genre_ids.includes(this.genre.id);
+        })
         console.log(this.genreMovies);
       })
     })
+
 
   }
 
