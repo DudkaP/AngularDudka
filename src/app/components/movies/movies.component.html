@@ -1,4 +1,11 @@
-<h1 class="blocksFlex">All movies</h1>
+<div class="topBlocksFlex">
+  <h1>All movies</h1>
+</div>
+<div class="moviesPage">
+  <button (click)="prev()">Prev</button>
+  Page: {{page}}
+  <button (click)="next()">Next</button>
+</div>
 <div class="blocksFlex">
   <app-movie *ngFor="let m of movies" [movie]="m"></app-movie>
 </div>

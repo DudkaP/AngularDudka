@@ -9,12 +9,14 @@ import {IMovie} from "../interfaces";
 })
 export class MovieService {
 
-  constructor(private httpClient:HttpClient) {
-
-  }
+  constructor(private httpClient:HttpClient) {  }
 
   getMovie(): Observable<IMovie> {
     return this.httpClient.get<IMovie>(urls.movie)
+  }
+
+  getMoviePages(page:string): Observable<IMovie> {
+    return this.httpClient.get<IMovie>(urls.movie + `?page=${page}`)
   }
 
 }
