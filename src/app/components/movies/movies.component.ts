@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services";
 import {IMovieResults} from "../../interfaces";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-movies',
@@ -14,7 +15,7 @@ export class MoviesComponent implements OnInit {
   lastPage: number;
 
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, private router:Router) {
   }
 
   ngOnInit(): void {
@@ -34,7 +35,7 @@ export class MoviesComponent implements OnInit {
   prev() {
     if (this.page > 1) {
       --this.page;
-      this.showMovies(this.page)
+      this.showMovies(this.page);
     } else {}
   }
 
