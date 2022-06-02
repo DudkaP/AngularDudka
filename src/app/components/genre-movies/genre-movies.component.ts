@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {IGenre} from "../../interfaces/genre";
+import {IGenre, IMovieResults} from "../../interfaces";
 import {MovieService} from "../../services";
-import {IMovieResults} from "../../interfaces";
 
 @Component({
   selector: 'app-genre-movies',
@@ -13,7 +12,7 @@ export class GenreMoviesComponent implements OnInit {
 
   genre: IGenre;
   allMovies: IMovieResults[];
-  genreMovies: IMovieResults[];
+  genreMovies: IMovieResults[] = [];
 
   constructor(private activatedRoute: ActivatedRoute, private movieService: MovieService) {
   }
@@ -24,14 +23,19 @@ export class GenreMoviesComponent implements OnInit {
       let {state: {data}} = history;
       this.genre = data;
 
-      this.movieService.getMovie().subscribe(value => {
-        this.allMovies = value.results;
+      let pageNums : number = 1;
 
-        this.genreMovies = this.allMovies.filter(g => {
-          return g.genre_ids.includes(this.genre.id);
+        this.movieService.getMoviePages(pageNums.toString()).subscribe(value => {
+          this.allMovies = value.results;
+
+          this.genreMovies = this.allMovies.filter(g => {
+            return g.genre_ids.includes(this.genre.id);
+          });
+
+
+
+          console.log(this.genreMovies.length);
         })
-        console.log(this.genreMovies);
-      })
     })
 
 

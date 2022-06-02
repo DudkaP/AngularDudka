@@ -1,3 +1,3 @@
 export interface IPage {
-  page: string
+  page: number;
 }
