@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserInfoService} from "../../services";
 
 @Component({
   selector: 'app-user-info',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userInfoService:UserInfoService) { }
 
   ngOnInit(): void {
   }
 
+  saveToStorage(){
+    this.userInfoService.storage.next('test');
+  }
 }
