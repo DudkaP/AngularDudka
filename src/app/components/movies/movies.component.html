@@ -3,15 +3,15 @@
   <h1>All movies</h1>
 </div>
 <div class="moviesPage">
-  <button (click)="prev()">Prev</button>
-  Page: {{page}}
-  <button (click)="next()">Next</button>
+  <a (click)="prev()" class="navigate"><< prev </a>
+  <span class="page"> {{page}} </span>
+  <a (click)="next()" class="navigate"> next >></a>
 </div>
 <div class="blocksFlex">
   <app-movie *ngFor="let m of movies" [movie]="m"></app-movie>
 </div>
 <div class="moviesPage">
-  <button (click)="prev()">Prev</button>
-  Page: {{page}}
-  <button (click)="next()">Next</button>
+  <a (click)="prev()" class="navigate"><< prev </a>
+  <span class="page"> {{page}} </span>
+  <a (click)="next()" class="navigate"> next >></a>
 </div>

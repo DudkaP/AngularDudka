@@ -3,7 +3,6 @@
     <div class="emptyBlockTop"></div>
     <div class="linksTop">
       <a routerLink="" routerLinkActive="active">Start Page</a>
-      <a [routerLink]="['movies']">Movies TEST</a>
       <a routerLink="movies" routerLinkActive="active">Movies</a>
     </div>
     <div class="userTop">
@@ -11,7 +10,7 @@
         <span *ngIf="!user.age">Register</span>
         <span *ngIf="user.age">
           {{user.name}}
-          <button (click)="logOut()">LogOut</button>
+          <button class="logOut button" (click)="logOut()">Out</button>
         </span>
       </a>
     </div>

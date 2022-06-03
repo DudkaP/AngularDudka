@@ -11,15 +11,13 @@ import {MainInterceptor} from "./main.interceptor";
 import {MovieComponent} from './components/movie/movie.component';
 import {IndexComponent} from './components/index/index.component';
 import {MoviesComponent} from './components/movies/movies.component';
-import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import {MovieCardComponent} from './components/movie-card/movie-card.component';
 import {RouterModule} from "@angular/router";
-import { MovieInfoComponent } from './components/movie-info/movie-info.component';
-import { GenresComponent } from './components/genres/genres.component';
-import { GenreComponent } from './components/genre/genre.component';
-import { GenreMoviesComponent } from './components/genre-movies/genre-movies.component';
-import { UserInfoComponent } from './components/user-info/user-info.component';
-import { StarsComponent } from './components/stars/stars.component';
-import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
+import {MovieInfoComponent} from './components/movie-info/movie-info.component';
+import {GenresComponent} from './components/genres/genres.component';
+import {GenreComponent} from './components/genre/genre.component';
+import {GenreMoviesComponent} from './components/genre-movies/genre-movies.component';
+import {UserInfoComponent} from './components/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -34,16 +32,14 @@ import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
     GenresComponent,
     GenreComponent,
     GenreMoviesComponent,
-    UserInfoComponent,
-    StarsComponent
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule,
-    NgbRatingModule
+    RouterModule
   ],
   providers: [
     {
