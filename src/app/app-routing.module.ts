@@ -7,12 +7,14 @@ import {MoviesComponent} from "./components/movies/movies.component";
 import {MovieCardComponent} from "./components/movie-card/movie-card.component";
 import {MovieInfoComponent} from "./components/movie-info/movie-info.component";
 import {GenreMoviesComponent} from "./components/genre-movies/genre-movies.component";
+import {UserInfoComponent} from "./components/user-info/user-info.component";
 
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', component: IndexComponent},
       {path: 'movies', component: MoviesComponent},
+      {path:'userInfo', component:UserInfoComponent},
       {path: 'genre-movies/:id', component:GenreMoviesComponent},
       {
         path: ':id', component: MovieCardComponent, children: [

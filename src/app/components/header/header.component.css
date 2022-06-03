@@ -8,17 +8,26 @@
 .headerNavigate {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
-.headerGenres {
-  display: flex;
-  justify-content: center;
-  color: aqua;
+.linksTop{
+  width: 50%;
+  text-align: center;
 }
+.emptyBlockTop{
+  width: 30%;
+}
+.userTop{
+  width: 20%;
+  text-align: end;
+}
+
 a {
   text-decoration: none;
   padding: 0 25px;
   color: snow;
 }
+
 .active {
   color: red;
 }

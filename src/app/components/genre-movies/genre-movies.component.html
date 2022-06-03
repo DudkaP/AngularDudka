@@ -8,3 +8,8 @@
 <div class="genreMoviesBlocksFlex">
   <app-movie *ngFor="let gMovie of genreMovies" [movie]="gMovie"></app-movie>
 </div>
+<div class="moviesPage">
+  <button (click)="prev()">Prev</button>
+  Page: {{page}}
+  <button (click)="next()">Next</button>
+</div>

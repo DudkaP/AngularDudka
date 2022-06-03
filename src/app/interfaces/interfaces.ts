@@ -1,3 +1,7 @@
 export interface IPage {
-  page: number;
+  page: number
+}
+export interface IUser {
+  name: string,
+  age: number
 }

@@ -1,10 +1,19 @@
 <div class="headerContainer">
   <div class="headerNavigate">
-    <a routerLink="" routerLinkActive="active">Start Page</a>
-    <a [routerLink]="['movies']">Movies TEST</a>
-    <a routerLink="movies" routerLinkActive="active">Movies</a>
-  </div>
-  <div class="headerGenres">
-
+    <div class="emptyBlockTop"></div>
+    <div class="linksTop">
+      <a routerLink="" routerLinkActive="active">Start Page</a>
+      <a [routerLink]="['movies']">Movies TEST</a>
+      <a routerLink="movies" routerLinkActive="active">Movies</a>
+    </div>
+    <div class="userTop">
+      <a routerLink="userInfo" routerLinkActive="active">
+        <span *ngIf="!user.age">Register</span>
+        <span *ngIf="user.age">
+          {{user.name}}
+          <button (click)="logOut()">LogOut</button>
+        </span>
+      </a>
+    </div>
   </div>
 </div>

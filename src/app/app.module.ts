@@ -18,6 +18,8 @@ import { GenresComponent } from './components/genres/genres.component';
 import { GenreComponent } from './components/genre/genre.component';
 import { GenreMoviesComponent } from './components/genre-movies/genre-movies.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { StarsComponent } from './components/stars/stars.component';
+import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -32,14 +34,16 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     GenresComponent,
     GenreComponent,
     GenreMoviesComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    NgbRatingModule
   ],
   providers: [
     {
