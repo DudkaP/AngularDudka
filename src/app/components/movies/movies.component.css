@@ -9,9 +9,13 @@
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  /*border: #0e1161 solid 1px;*/
 }
 
 .moviesPage {
   text-align: center;
 }
+
+.totalPages {
+  text-align: end;
+}
+

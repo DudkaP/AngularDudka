@@ -4,3 +4,9 @@
   flex-wrap: wrap;
   min-width: 100%;
 }
+.totalPages {
+  text-align: end;
+}
+.moviesPage {
+  text-align: center;
+}

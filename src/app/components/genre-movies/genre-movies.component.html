@@ -1,4 +1,10 @@
+<div class="totalPages">Total pages: {{lastPage}}</div>
 <h1 class="genreMoviesBlocksFlex">{{genre.name}}</h1>
+<div class="moviesPage">
+  <button (click)="prev()">Prev</button>
+  Page: {{page}}
+  <button (click)="next()">Next</button>
+</div>
 <div class="genreMoviesBlocksFlex">
   <app-movie *ngFor="let gMovie of genreMovies" [movie]="gMovie"></app-movie>
 </div>

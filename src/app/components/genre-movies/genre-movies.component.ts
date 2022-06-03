@@ -11,34 +11,44 @@ import {MovieService} from "../../services";
 export class GenreMoviesComponent implements OnInit {
 
   genre: IGenre;
-  allMovies: IMovieResults[];
-  genreMovies: IMovieResults[] = [];
+  genreMovies: IMovieResults[];
+  page: number;
+  lastPage: number;
 
   constructor(private activatedRoute: ActivatedRoute, private movieService: MovieService) {
   }
 
   ngOnInit(): void {
 
-    this.activatedRoute.params.subscribe(value => {
+    this.activatedRoute.params.subscribe(() => {
       let {state: {data}} = history;
       this.genre = data;
+      this.page = 1;
+      this.showGenreMovies(this.genre.id, this.page);
 
-      let pageNums : number = 1;
-
-        this.movieService.getMoviePages(pageNums.toString()).subscribe(value => {
-          this.allMovies = value.results;
-
-          this.genreMovies = this.allMovies.filter(g => {
-            return g.genre_ids.includes(this.genre.id);
-          });
-
-
-
-          console.log(this.genreMovies.length);
-        })
     })
+  }
+  showGenreMovies(id:number, page:number){
+    this.movieService.getGenreMovies(id.toString(), page.toString()).subscribe(value => {
+      this.genreMovies = value.results;
+      this.lastPage = value.total_pages
+      console.log(value);
+    });
+  }
+  prev() {
+    if (this.page > 1) {
+      --this.page;
+      this.showGenreMovies(this.genre.id, this.page);
+    } else {
+    }
+  }
 
-
+  next() {
+    if (this.page < this.lastPage) {
+      ++this.page;
+      this.showGenreMovies(this.genre.id, this.page)
+    } else {
+    }
   }
 
 }

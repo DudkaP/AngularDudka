@@ -15,6 +15,10 @@ export class MovieService {
     return this.httpClient.get<IMovie>(urls.movie)
   }
 
+  getGenreMovies(genre:string, page:string): Observable<IMovie> {
+    return this.httpClient.get<IMovie>(urls.movie + `?with_genres=${genre}&page=${page}`)
+  }
+
   getMoviePages(page:string): Observable<IMovie> {
     return this.httpClient.get<IMovie>(urls.movie + `?page=${page}`)
   }
