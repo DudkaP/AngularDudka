@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserInfoService} from "../../services";
+import {StorageService} from "../../services";
 import {FormControl, FormGroup} from "@angular/forms";
 import {IUser} from "../../interfaces";
 
@@ -12,18 +12,18 @@ export class UserInfoComponent implements OnInit {
   user: IUser;
   form: FormGroup;
 
-  constructor(private userInfoService: UserInfoService) {
+  constructor(private storageService: StorageService) {
     this.form = new FormGroup({
       name: new FormControl(''),
       age: new FormControl('')
     });
-    this.userInfoService.storage.subscribe(value => this.user = value);
+    this.storageService.storage.subscribe(value => this.user = value);
   }
 
   ngOnInit(): void {
   }
 
   saveToStorage() {
-    this.userInfoService.storage.next(this.form.value);
+    this.storageService.storage.next(this.form.value);
   }
 }

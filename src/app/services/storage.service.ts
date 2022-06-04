@@ -4,7 +4,8 @@ import {BehaviorSubject} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class UserInfoService {
+export class StorageService {
+
   storage = new BehaviorSubject<any>({});
 
   constructor() { }
