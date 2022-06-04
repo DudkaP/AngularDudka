@@ -10,17 +10,18 @@ import {IMovie} from "../interfaces";
 })
 export class MovieService {
 
-  constructor(private httpClient:HttpClient) {  }
-
-  getMovie(): Observable<IMovie> {
-    return this.httpClient.get<IMovie>(urls.movie)
+  constructor(private httpClient: HttpClient) {
   }
 
-  getGenreMovies(genre:string, page:string): Observable<IMovie> {
+  getGenreMovies(genre: string, page: string): Observable<IMovie> {
     return this.httpClient.get<IMovie>(urls.movie + `?with_genres=${genre}&page=${page}`)
   }
 
-  getMoviePages(page:string): Observable<IMovie> {
+  getSearchMovies(query: string, page: string): Observable<IMovie> {
+    return this.httpClient.get<IMovie>(urls.movieSearch + `?query=${query}&page=${page}`)
+  }
+
+  getMoviePages(page: string): Observable<IMovie> {
     return this.httpClient.get<IMovie>(urls.movie + `?page=${page}`)
   }
 

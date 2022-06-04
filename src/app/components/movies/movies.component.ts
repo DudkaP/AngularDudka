@@ -28,7 +28,6 @@ export class MoviesComponent implements OnInit {
     this.movieService.getMoviePages(page.toString()).subscribe(value => {
       this.movies = value.results;
       this.lastPage = value.total_pages;
-      console.log(value);
     })
   }
 

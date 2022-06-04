@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 import {StorageService} from "../../services";
 import {IUser} from "../../interfaces";
@@ -11,8 +13,13 @@ import {IUser} from "../../interfaces";
 export class HeaderComponent implements OnInit {
 
   user: IUser;
+  form: FormGroup
 
-  constructor(private userInfoService: StorageService) {
+  constructor(private userInfoService: StorageService, private router:Router) {
+
+    this.form = new FormGroup({
+      query: new FormControl('')
+    });
 
     this.userInfoService.storage.subscribe(value => this.user = value);
 
@@ -23,5 +30,9 @@ export class HeaderComponent implements OnInit {
 
   logOut() {
     this.userInfoService.storage.next({});
+  }
+
+  search() {
+    this.router.navigate(['search'], {queryParams:[this.form.value.query]});
   }
 }

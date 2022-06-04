@@ -34,7 +34,6 @@ export class GenreMoviesComponent implements OnInit {
     this.movieService.getGenreMovies(id.toString(), page.toString()).subscribe(value => {
       this.genreMovies = value.results;
       this.lastPage = value.total_pages
-      console.log(value);
     });
   }
 

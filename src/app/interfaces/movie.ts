@@ -21,3 +21,9 @@ export interface IMovieResults {
   vote_average: number,
   vote_count: number
 }
+export interface IMovieSearch {
+  page: number,
+  results: [],
+  total_pages: number,
+  total_results: number
+}

@@ -18,6 +18,7 @@ import {GenresComponent} from './components/genres/genres.component';
 import {GenreComponent} from './components/genre/genre.component';
 import {GenreMoviesComponent} from './components/genre-movies/genre-movies.component';
 import {UserInfoComponent} from './components/user-info/user-info.component';
+import {SearchMoviesComponent} from './components/search-movies/search-movies.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {UserInfoComponent} from './components/user-info/user-info.component';
     GenresComponent,
     GenreComponent,
     GenreMoviesComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    SearchMoviesComponent,
   ],
   imports: [
     BrowserModule,
