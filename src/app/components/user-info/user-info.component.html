@@ -1,4 +1,5 @@
-<h2 class="topBlocksFlex">User info</h2>
+<h2 *ngIf="!user.age" class="topBlocksFlex">Login page</h2>
+<h2 *ngIf="user.age" class="topBlocksFlex">Welcome {{user.name}}</h2>
 <form [formGroup]="form" *ngIf="!user.age" class="userForm">
   <div>Your name: <input type="text" formControlName="name"></div>
   <br/>
@@ -10,8 +11,9 @@
 </form>
 
 <div class="userForm">
+  <div *ngIf="user.age">Your personal information:</div>
   <div *ngIf="user.age">Name: {{user.name}}</div>
   <div *ngIf="user.age">Age: {{user.age}}</div>
   <br/>
-  <button *ngIf="user.age" (click)="del()">LogOut</button>
+  <a *ngIf="user.age" routerLink="movies" routerLinkActive="active">Go to watch movies...</a>
 </div>

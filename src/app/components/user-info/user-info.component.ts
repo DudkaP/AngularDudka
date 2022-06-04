@@ -26,8 +26,4 @@ export class UserInfoComponent implements OnInit {
   saveToStorage() {
     this.userInfoService.storage.next(this.form.value);
   }
-
-  del() {
-    this.userInfoService.storage.next({})
-  }
 }
