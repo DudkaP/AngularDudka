@@ -18,9 +18,11 @@
 .totalPages {
   text-align: end;
 }
+
 .navigate {
   cursor: pointer;
 }
+
 .page {
   font-weight: bold;
 }

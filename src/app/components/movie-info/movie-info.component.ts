@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+
 import {IMovieResults} from "../../interfaces";
 import {urls} from "../../constants";
-import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-movie-info',
@@ -13,11 +14,12 @@ export class MovieInfoComponent implements OnInit {
   movieInfo: IMovieResults;
   poster500: string = urls.getPoster500;
 
-  constructor(private activatedRoute:ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(value => {
-      let {state:{data}} = history;
+    this.activatedRoute.params.subscribe(() => {
+      let {state: {data}} = history;
       this.movieInfo = data;
     })
   }

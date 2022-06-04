@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+
 import {IGenre, IMovieResults} from "../../interfaces";
 import {MovieService} from "../../services";
 
@@ -28,13 +29,15 @@ export class GenreMoviesComponent implements OnInit {
 
     })
   }
-  showGenreMovies(id:number, page:number){
+
+  showGenreMovies(id: number, page: number) {
     this.movieService.getGenreMovies(id.toString(), page.toString()).subscribe(value => {
       this.genreMovies = value.results;
       this.lastPage = value.total_pages
       console.log(value);
     });
   }
+
   prev() {
     if (this.page > 1) {
       --this.page;

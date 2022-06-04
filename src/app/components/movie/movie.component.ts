@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+
 import {IMovieResults} from "../../interfaces";
 import {urls} from "../../constants";
 
@@ -9,7 +10,7 @@ import {urls} from "../../constants";
 })
 export class MovieComponent implements OnInit {
   @Input()
-  movie:IMovieResults;
+  movie: IMovieResults;
   getPoster200: string = urls.getPoster200;
 
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 import {StorageService} from "../../services";
 import {IUser} from "../../interfaces";
 
@@ -9,9 +10,9 @@ import {IUser} from "../../interfaces";
 })
 export class HeaderComponent implements OnInit {
 
-  user:IUser;
+  user: IUser;
 
-  constructor(private userInfoService:StorageService) {
+  constructor(private userInfoService: StorageService) {
 
     this.userInfoService.storage.subscribe(value => this.user = value);
 

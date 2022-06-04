@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {IMovieResults} from "../../interfaces";
 import {ActivatedRoute} from "@angular/router";
-import {urls} from "../../constants";
 import {Location} from '@angular/common';
+
+import {IMovieResults} from "../../interfaces";
+import {urls} from "../../constants";
 
 
 @Component({
@@ -12,15 +13,16 @@ import {Location} from '@angular/common';
 })
 export class MovieCardComponent implements OnInit {
 
-  movieCard:IMovieResults;
-  poster500:string = urls.getPoster500;
+  movieCard: IMovieResults;
+  poster500: string = urls.getPoster500;
 
 
-  constructor(private activatedRoute:ActivatedRoute, private location:Location) { }
+  constructor(private activatedRoute: ActivatedRoute, private location: Location) {
+  }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(value => {
-      let {state:{data}} = history;
+    this.activatedRoute.params.subscribe(() => {
+      let {state: {data}} = history;
       console.log(history);
       this.movieCard = data;
 

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IGenre} from "../../interfaces/genre";
+
+import {IGenre} from "../../interfaces";
 
 @Component({
   selector: 'app-genre',
@@ -8,9 +9,10 @@ import {IGenre} from "../../interfaces/genre";
 })
 export class GenreComponent implements OnInit {
   @Input()
-  genre:IGenre;
+  genre: IGenre;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

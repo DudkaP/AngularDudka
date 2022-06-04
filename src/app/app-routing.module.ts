@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
+
 import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
 import {IndexComponent} from "./components/index/index.component";
 import {MoviesComponent} from "./components/movies/movies.component";

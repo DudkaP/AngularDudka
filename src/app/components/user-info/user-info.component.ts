@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {StorageService} from "../../services";
 import {FormControl, FormGroup} from "@angular/forms";
+
+import {StorageService} from "../../services";
 import {IUser} from "../../interfaces";
 
 @Component({

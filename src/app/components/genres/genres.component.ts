@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 import {GenresService} from "../../services";
-import {IGenre} from "../../interfaces/genre";
+import {IGenre} from "../../interfaces";
 
 @Component({
   selector: 'app-genres',
@@ -9,9 +10,10 @@ import {IGenre} from "../../interfaces/genre";
 })
 export class GenresComponent implements OnInit {
 
-  genres:IGenre[];
+  genres: IGenre[];
 
-  constructor(private genresService:GenresService) { }
+  constructor(private genresService: GenresService) {
+  }
 
   ngOnInit(): void {
     this.genresService.getGenres().subscribe(value => {
