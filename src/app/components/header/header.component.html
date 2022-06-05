@@ -3,12 +3,12 @@
     <div class="emptyBlockTop">
       <form [formGroup]="form" *ngIf="user.age" class="userForm">
         <div><input type="text" formControlName="query">
-          <button (click)="search()"> search</button>
+          <button (click)="search()" class="logOut button"> search</button>
         </div>
       </form>
     </div>
     <div class="linksTop">
-      <a routerLink="movies" routerLinkActive="active">Movies</a>
+      <a routerLink="movies" routerLinkActive="active" *ngIf="user.age">Movies</a>
     </div>
     <div class="userTop">
       <a routerLink="userInfo" routerLinkActive="active">

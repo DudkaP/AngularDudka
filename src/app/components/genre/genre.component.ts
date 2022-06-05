@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import {IGenre} from "../../interfaces";
+import {IGenre, IUser} from "../../interfaces";
+import {StorageService} from "../../services";
 
 @Component({
   selector: 'app-genre',
@@ -10,8 +11,11 @@ import {IGenre} from "../../interfaces";
 export class GenreComponent implements OnInit {
   @Input()
   genre: IGenre;
+  user: IUser;
 
-  constructor() {
+  constructor(private storageService: StorageService) {
+    this.storageService.storage.subscribe(value => this.user = value);
+
   }
 
   ngOnInit(): void {
